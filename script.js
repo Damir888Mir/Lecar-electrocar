@@ -147,8 +147,8 @@
         vx: (Math.random() - 0.5) * 0.25,
         vy: -0.1 - Math.random() * 0.35,
         r: 0.6 + Math.random() * 1.6,
-        a: 0.2 + Math.random() * 0.6,
-        hue: Math.random() > 0.5 ? '47,243,164' : '24,200,255',
+        a: 0.15 + Math.random() * 0.4,
+        hue: Math.random() > 0.4 ? '168,152,230' : '235,232,245',
       }));
     };
     let visible = true;
@@ -164,7 +164,7 @@
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(${p.hue},${p.a})`;
-          ctx.shadowBlur = 12; ctx.shadowColor = `rgba(${p.hue},0.9)`;
+          ctx.shadowBlur = 4; ctx.shadowColor = `rgba(${p.hue},0.5)`;
           ctx.fill();
           for (let j = i + 1; j < particles.length; j++) {
             const q = particles[j];
@@ -172,7 +172,7 @@
             const d2 = dx * dx + dy * dy;
             if (d2 < 120 * 120) {
               ctx.shadowBlur = 0;
-              ctx.strokeStyle = `rgba(${p.hue},${0.12 * (1 - Math.sqrt(d2) / 120)})`;
+              ctx.strokeStyle = `rgba(${p.hue},${0.08 * (1 - Math.sqrt(d2) / 120)})`;
               ctx.lineWidth = 1;
               ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
             }

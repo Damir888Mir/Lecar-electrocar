@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lecar-electrocar — ремонт, обслуживание и диагностика электромобилей в Алматы</title>
+  <meta name="description" content="Лекарь электрокаров — сервис электромобилей и гибридов в Алматы. Компьютерная диагностика, диагностика высоковольтной батареи, плановое ТО, ремонт ходовой и электроники, прошивка и русификация. ул. Хмельницкого, 38. Ежедневно 10:00–20:00." />
+  <meta name="theme-color" content="#0b0c0f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_KZ" />
+  <meta property="og:title" content="Lecar-electrocar — сервис электромобилей и гибридов в Алматы" />
+  <meta property="og:description" content="Чиним с умом, а не наугад. От планового ТО до сложных ремонтов электромобилей и гибридов." />
+  <meta property="og:image" content="images/og.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap&subset=cyrillic" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Lecar-electrocar (Лекарь электрокаров)",
+    "description": "Сервис электромобилей и гибридов в Алматы: ремонт, обслуживание, диагностика.",
+    "telephone": "+77777730288",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Хмельницкого, 38, 1 этаж",
+      "addressLocality": "Алматы",
+      "postalCode": "050054",
+      "addressCountry": "KZ"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 43.322011, "longitude": 76.967658 },
+    "openingHours": "Mo-Su 10:00-20:00",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "109" },
+    "sameAs": [
+      "https://www.instagram.com/lecar_electrocar/",
+      "https://t.me/lecar_electrocar",
+      "https://youtube.com/@Lecar_electrocar",
+      "https://2gis.kz/almaty/firm/70000001086911492"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div class="progress" id="progress"></div>
+
+  <!-- SVG sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M6 11h2l1.5-3 2 6 1.5-3H18"/></symbol>
+      <symbol id="i-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2"/><path d="m11 9-2 3h3l-2 3"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L22 14l-8 8-2.3-2.3a4 4 0 0 0-5-5L2 10l8-8 2.3 2.3a4 4 0 0 0 2.4 2Z" transform="scale(.9) translate(1.3 1.3)"/></symbol>
+      <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3v-5l2-5h11l3 5h2v5h-2"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M9.5 17h5M5 12h14"/></symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+      <symbol id="i-screen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="m10 8.5 4 2.5-4 2.5Z"/></symbol>
+      <symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 4 3 2 3-2M9 20l3-2 3 2"/></symbol>
+      <symbol id="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6c-4 0-7 2.7-7 6s3 6 7 6h1V6h-1Z"/><path d="M15 8h6M15 12h6M15 16h6"/></symbol>
+      <symbol id="i-tire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/></symbol>
+      <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7.5 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.5l-2-3Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.6-8.4Z"/></symbol>
+      <symbol id="i-tg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 19.8c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.3 1 11.8c-1.1-.3-1.1-1.1.2-1.6L20.5 2.8c.9-.3 1.7.2 1.4 1.5Z"/></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
+      <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Lecar-electrocar — на главную">
+        <span class="logo-mark"><svg><use href="#i-bolt"/></svg></span>
+        <span>Lecar<small>electrocar</small></span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="#services">Услуги</a>
+        <a href="#process">Как мы работаем</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+77777730288">+7 777 773 02 88</a>
+        <a class="btn btn-primary btn-sm" href="https://wa.me/77777730288?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener">Записаться</a>
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="m-link" href="#services">Услуги</a>
+    <a class="m-link" href="#process">Как мы работаем</a>
+    <a class="m-link" href="#gallery">Галерея</a>
+    <a class="m-link" href="#reviews">Отзывы</a>
+    <a class="m-link" href="#contacts">Контакты</a>
+    <a class="btn btn-primary" href="https://wa.me/77777730288?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener">Записаться в WhatsApp</a>
+    <a class="btn btn-ghost" href="tel:+77777730288">+7 777 773 02 88</a>
+  </div>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <canvas id="sparks"></canvas>
+      <div class="container">
+        <span class="eyebrow fade-in" style="animation-delay:.1s"><span class="dot"></span>Сервис электромобилей и гибридов · Алматы</span>
+        <h1>
+          <span class="line"><span class="word" style="animation-delay:.25s">Чиним</span> <span class="word" style="animation-delay:.35s">с</span> <span class="word" style="animation-delay:.45s">умом,</span></span>
+          <span class="line"><span class="word grad-text" style="animation-delay:.6s">а&nbsp;не&nbsp;наугад.</span></span>
+        </h1>
+        <p class="hero-sub fade-in" style="animation-delay:.9s">«Лекарь электрокаров» — от планового ТО до сложных ремонтов. Сначала точная диагностика, потом понятная цена, и только после этого — работа.</p>
+        <div class="hero-ctas fade-in" style="animation-delay:1.05s">
+          <a class="btn btn-primary magnetic" href="https://wa.me/77777730288?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener">Записаться на сервис <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost magnetic" href="#services">Наши услуги</a>
+        </div>
+        <div class="hero-meta fade-in" style="animation-delay:1.25s">
+          <a class="chip" href="https://2gis.kz/almaty/firm/70000001086911492/tab/reviews" target="_blank" rel="noopener"><span class="stars">★★★★★</span><strong>4.7</strong> в 2ГИС · 109 оценок</a>
+          <span class="chip"><svg><use href="#i-clock"/></svg>Ежедневно <strong>10:00–20:00</strong></span>
+          <span class="chip"><svg><use href="#i-pin"/></svg>ул. Хмельницкого, 38</span>
+        </div>
+      </div>
+      <a href="#why" class="scroll-hint" aria-label="Прокрутить вниз"><span class="mouse"></span>ЛИСТАЙТЕ</a>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Компьютерная диагностика</div>
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Диагностика ВВБ</div>
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Плановое ТО</div>
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Замена масла в редукторе</div>
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Ремонт ходовой</div>
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Автоэлектрика</div>
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Прошивка и русификация</div>
+        <div class="marquee-item"><svg><use href="#i-bolt"/></svg>Запчасти и аксессуары</div>
+      </div>
+    </div>
+
+    <!-- ================= WHY ================= -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Почему Lecar</span>
+          <h2>Специалисты именно <span class="grad-text">по электрокарам</span></h2>
+          <p>Электромобиль — это прежде всего электроника и софт. Мы работаем с ними каждый день, поэтому знаем типичные болячки и не меняем детали «на удачу».</p>
+        </div>
+        <div class="why-grid">
+          <article class="card reveal" data-delay="1">
+            <span class="why-num">01</span>
+            <h3>Только EV и гибриды</h3>
+            <p>Не универсальное СТО: Zeekr, Li Auto, BYD, Voyah, VW ID. и другие электрокары — наша основная работа.</p>
+          </article>
+          <article class="card reveal" data-delay="2">
+            <span class="why-num">02</span>
+            <h3>Диагностика, а не догадки</h3>
+            <p>Сначала находим причину сканером и замерами, потом предлагаем ремонт. Без лишних замен.</p>
+          </article>
+          <article class="card reveal" data-delay="3">
+            <span class="why-num">03</span>
+            <h3>Цена до начала работ</h3>
+            <p>Объясняем, что сломано и сколько стоит ремонт. Работы начинаем только после вашего согласия.</p>
+          </article>
+          <article class="card reveal" data-delay="4">
+            <span class="why-num">04</span>
+            <h3>Запчасти и аксессуары</h3>
+            <p>Поможем подобрать и заказать запчасти и аксессуары под вашу модель — спросите у мастера.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="section" id="services" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Услуги</span>
+          <h2>Всё для вашего <span class="grad-text">электромобиля</span></h2>
+          <p>От планового обслуживания до сложного ремонта электроники. Не уверены, что нужно? Приезжайте на диагностику — подскажем честно.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card service featured reveal" data-delay="1">
+            <span class="badge">Популярно</span>
+            <div class="icon-box"><svg><use href="#i-scan"/></svg></div>
+            <h3>Компьютерная диагностика</h3>
+            <p>Полная проверка всех блоков управления, чтение и расшифровка ошибок, проверка систем автомобиля.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>от 30 минут</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Сканирование всех электронных блоков</li>
+                <li>Расшифровка и анализ ошибок</li>
+                <li>Проверка систем помощи водителю и камер</li>
+                <li>Рекомендации по ремонту с ценой</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="2">
+            <div class="icon-box"><svg><use href="#i-battery"/></svg></div>
+            <h3>Диагностика ВВБ</h3>
+            <p>Проверка высоковольтной батареи: ёмкость, состояние ячеек, причины неполной зарядки и малого запаса хода.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>1–2 часа</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Оценка состояния (SOH) и баланса ячеек</li>
+                <li>Поиск причин, если батарея не заряжается до 100%</li>
+                <li>Проверка системы зарядки</li>
+                <li>Рекомендации по восстановлению</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="3">
+            <div class="icon-box"><svg><use href="#i-wrench"/></svg></div>
+            <h3>Плановое ТО</h3>
+            <p>Регламентное обслуживание электромобилей и гибридов без «огромных чеков» и навязанных работ.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>1–3 часа</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Замена масла в редукторе</li>
+                <li>Замена салонного фильтра и технических жидкостей</li>
+                <li>Проверка тормозной системы и подвески</li>
+                <li>Обслуживание гибридных систем</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="1">
+            <div class="icon-box"><svg><use href="#i-car"/></svg></div>
+            <h3>Ремонт ходовой</h3>
+            <p>Устраняем стуки, скрипы и люфты подвески. Электрокары тяжелее — подвеска требует внимания.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>от 1 часа</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Диагностика подвески на подъёмнике</li>
+                <li>Замена рычагов, сайлентблоков, стоек</li>
+                <li>Тормозные колодки и диски</li>
+                <li>Обслуживание для такси и автопарков</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="2">
+            <div class="icon-box"><svg><use href="#i-chip"/></svg></div>
+            <h3>Автоэлектрика и электроника</h3>
+            <p>Ремонт электронных систем: камеры, привод багажника, замки, датчики, проводка и блоки управления.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>по диагностике</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Камеры заднего вида и кругового обзора</li>
+                <li>Электропривод двери багажника</li>
+                <li>Поиск замыканий и обрывов проводки</li>
+                <li>Ремонт и адаптация блоков управления</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="3">
+            <div class="icon-box"><svg><use href="#i-screen"/></svg></div>
+            <h3>Прошивка и русификация</h3>
+            <p>Обновление ПО, русификация меню, установка приложений и SIM-карты в мультимедиа.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>1–3 часа</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Русификация интерфейса</li>
+                <li>Установка YouTube, Яндекс, Музыки, Кинопоиска</li>
+                <li>Установка SIM-карты и настройка интернета</li>
+                <li>Обновление прошивки</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="1">
+            <div class="icon-box"><svg><use href="#i-snow"/></svg></div>
+            <h3>Климат и отопление</h3>
+            <p>Ремонт печки, кондиционера и теплового насоса — особенно важно перед алматинской зимой.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>по диагностике</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Диагностика системы климата</li>
+                <li>Ремонт и замена отопителя</li>
+                <li>Заправка и ремонт кондиционера</li>
+                <li>Проверка теплового насоса</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="2">
+            <div class="icon-box"><svg><use href="#i-light"/></svg></div>
+            <h3>Оптика и фонари</h3>
+            <p>Ремонт фар и задних фонарей: запотевание, замыкания, сушка и герметизация.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>по диагностике</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Сушка и герметизация фонарей</li>
+                <li>Ремонт замыканий в оптике</li>
+                <li>Замена фар и фонарей</li>
+                <li>Проверка ошибок после установки</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="card service reveal" data-delay="3">
+            <div class="icon-box"><svg><use href="#i-tire"/></svg></div>
+            <h3>Датчики давления шин</h3>
+            <p>Установка и прописка датчиков TPMS на комплект зимней или летней резины.</p>
+            <div class="service-foot">
+              <div class="service-meta"><span>до 1 часа</span><strong>Цена — по запросу</strong></div>
+              <button class="toggle" type="button">Что входит <svg><use href="#i-chev"/></svg></button>
+              <div class="service-details"><div><ul>
+                <li>Подбор датчиков под модель</li>
+                <li>Установка на второй комплект колёс</li>
+                <li>Прописка датчиков в системе авто</li>
+              </ul></div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BRANDS ================= -->
+    <section class="brands">
+      <div class="container">
+        <div class="brands-box reveal">
+          <div>
+            <span class="kicker">С какими марками работаем</span>
+            <h3>Электромобили и гибриды из Китая, Европы и США</h3>
+            <p>Не нашли свою марку? Напишите нам — скорее всего, мы уже с ней работали.</p>
+          </div>
+          <div class="brand-list">
+            <span>Zeekr</span><span>Li Auto</span><span>BYD</span><span>Voyah</span><span>Volkswagen ID.</span>
+            <span>Tesla</span><span>Geely</span><span>Changan</span><span>Leapmotor</span><span>Hongqi</span>
+            <span>AITO</span><span>Xpeng</span><span>Honda e:NS</span><span>JAC</span><span>Toyota Hybrid</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="section steps-section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Как мы работаем</span>
+          <h2>Четыре шага — <span class="grad-text">и вы снова в пути</span></h2>
+          <p>Записаться на сервис проще, чем кажется. Мы ценим ваше время и приглашаем к точному часу.</p>
+        </div>
+        <div class="steps" id="steps">
+          <div class="steps-line"><i></i></div>
+          <div class="step reveal" data-delay="1">
+            <div class="step-num">01</div>
+            <h3>Запись</h3>
+            <p>Напишите в WhatsApp или позвоните. Расскажите о модели и проблеме — подберём удобное время.</p>
+          </div>
+          <div class="step reveal" data-delay="2">
+            <div class="step-num">02</div>
+            <h3>Диагностика</h3>
+            <p>Проверяем автомобиль оборудованием и находим настоящую причину неисправности.</p>
+          </div>
+          <div class="step reveal" data-delay="3">
+            <div class="step-num">03</div>
+            <h3>Согласование</h3>
+            <p>Объясняем простым языком, что нужно сделать и сколько это стоит. Без сюрпризов в чеке.</p>
+          </div>
+          <div class="step reveal" data-delay="4">
+            <div class="step-num">04</div>
+            <h3>Ремонт и выдача</h3>
+            <p>Выполняем работы, проверяем результат и рассказываем, на что обратить внимание дальше.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="stats">
+          <div class="card stat reveal" data-delay="1"><div class="stat-value grad-text" data-count="4.7" data-decimals="1">0</div><div class="stat-label">рейтинг в 2ГИС</div></div>
+          <div class="card stat reveal" data-delay="2"><div class="stat-value grad-text" data-count="109">0</div><div class="stat-label">оценок клиентов</div></div>
+          <div class="card stat reveal" data-delay="3"><div class="stat-value grad-text" data-count="7400" data-suffix="+">0</div><div class="stat-label">подписчиков в Instagram</div></div>
+          <div class="card stat reveal" data-delay="4"><div class="stat-value grad-text" data-count="7">0</div><div class="stat-label">дней в неделю без выходных</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about" style="padding-top:0">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <span class="kicker">О нас</span>
+          <h2>«Лекарь электрокаров» — <span class="grad-text">ваш мастер по EV</span></h2>
+          <p>Мы — сервис электромобилей и гибридов в Турксибском районе Алматы. Владельцы электрокаров приезжают к нам после официальных дилеров и других СТО, когда нужна не «замена всего блока», а толковое решение.</p>
+          <p>Объясняем всё доступно и без лишних понтов — так о нас пишут клиенты.</p>
+          <ul class="checks">
+            <li><svg><use href="#i-check"/></svg>Опытные мастера-электрики и диагносты</li>
+            <li><svg><use href="#i-check"/></svg>Специализированное оборудование для EV</li>
+            <li><svg><use href="#i-check"/></svg>Обслуживаем частные авто, такси и автопарки</li>
+            <li><svg><use href="#i-check"/></svg>Оплата картой, наличными, по QR и через банк</li>
+          </ul>
+          <a class="btn btn-primary magnetic" href="#contacts">Как нас найти <svg><use href="#i-arrow"/></svg></a>
+        </div>
+        <figure class="photo about-photo reveal" data-delay="2">
+          <img src="images/about.jpg" alt="Мастерская Lecar-electrocar" loading="lazy" onerror="this.remove()" />
+          <div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>Мастерская или команда<br/>images/about.jpg</div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="section" id="gallery" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Галерея</span>
+          <h2>Наша <span class="grad-text">работа</span></h2>
+          <p>Ещё больше фото и видео ремонтов — в нашем Instagram.</p>
+        </div>
+        <div class="gallery">
+          <figure class="photo reveal"><img src="images/gallery-1.jpg" alt="Работа Lecar-electrocar" loading="lazy" onerror="this.remove()" /><div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>images/gallery-1.jpg</div></figure>
+          <figure class="photo reveal" data-delay="1"><img src="images/gallery-2.jpg" alt="Работа Lecar-electrocar" loading="lazy" onerror="this.remove()" /><div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>images/gallery-2.jpg</div></figure>
+          <figure class="photo reveal" data-delay="2"><img src="images/gallery-3.jpg" alt="Работа Lecar-electrocar" loading="lazy" onerror="this.remove()" /><div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>images/gallery-3.jpg</div></figure>
+          <figure class="photo reveal" data-delay="3"><img src="images/gallery-4.jpg" alt="Работа Lecar-electrocar" loading="lazy" onerror="this.remove()" /><div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>images/gallery-4.jpg</div></figure>
+          <figure class="photo reveal" data-delay="1"><img src="images/gallery-5.jpg" alt="Работа Lecar-electrocar" loading="lazy" onerror="this.remove()" /><div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>images/gallery-5.jpg</div></figure>
+          <figure class="photo reveal" data-delay="2"><img src="images/gallery-6.jpg" alt="Работа Lecar-electrocar" loading="lazy" onerror="this.remove()" /><div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>images/gallery-6.jpg</div></figure>
+          <figure class="photo reveal" data-delay="3"><img src="images/gallery-7.jpg" alt="Работа Lecar-electrocar" loading="lazy" onerror="this.remove()" /><div class="ph"><svg><use href="#i-camera"/></svg><b>Место для фото</b>images/gallery-7.jpg</div></figure>
+        </div>
+        <div class="center-cta reveal"><a class="btn btn-ghost" href="https://www.instagram.com/lecar_electrocar/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg> @lecar_electrocar</a></div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="section steps-section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Отзывы</span>
+          <h2>Что говорят <span class="grad-text">клиенты</span></h2>
+          <p>Подтверждённые отзывы из 2ГИС.</p>
+        </div>
+        <div class="reviews-wrap reveal">
+          <div class="reviews" id="reviewsTrack">
+            <article class="card review">
+              <span class="stars">★★★★★</span>
+              <h3>«Теперь только к вам»</h3>
+              <p>У официального дилера Zeekr выкатили огромный чек за плановое ТО. Здесь успокоили, объяснили, почему не работал круиз, провели диагностику — и всё по приемлемой цене.</p>
+              <div class="review-author"><span class="avatar">A</span><div><b>aleveryan</b><small>Zeekr · плановое ТО</small></div></div>
+            </article>
+            <article class="card review">
+              <span class="stars">★★★★★</span>
+              <h3>«Лучший мастер электрокаров Алматы»</h3>
+              <p>Высокий сервис, профессионализм, оперативность. Можно смело приезжать на плановое ТО, диагностику, восстановление. Рекомендую владельцам электро и гибридов.</p>
+              <div class="review-author"><span class="avatar">M</span><div><b>Murat Zhitibayev</b><small>ТО и диагностика</small></div></div>
+            </article>
+            <article class="card review">
+              <span class="stars">★★★★★</span>
+              <h3>«Батарея снова заряжается на 100%»</h3>
+              <p>Аккумулятор заряжался только до 63%, машина мало проезжала. Сделали диагностику и помогли решить проблему. Ребята молодцы, большое спасибо!</p>
+              <div class="review-author"><span class="avatar">М</span><div><b>Македонский Малых</b><small>Диагностика ВВБ</small></div></div>
+            </article>
+            <article class="card review">
+              <span class="stars">★★★★★</span>
+              <h3>«Не ждала часами»</h3>
+              <p>Приехала в оговоренное время, не ждала часами, как на других СТО. Всю работу сделали чётко и быстро. Буду приезжать на все следующие ТО.</p>
+              <div class="review-author"><span class="avatar">K</span><div><b>Kamala Nshanova</b><small>Плановое ТО</small></div></div>
+            </article>
+            <article class="card review">
+              <span class="stars">★★★★★</span>
+              <h3>«Настоящие знатоки своего дела»</h3>
+              <p>Огромная благодарность за то, что так быстро отремонтировали открывание двери багажника моей ID.4 PRO!</p>
+              <div class="review-author"><span class="avatar">Т</span><div><b>Торгын Ламбекова</b><small>VW ID.4 · электрика</small></div></div>
+            </article>
+            <article class="card review">
+              <span class="stars">★★★★★</span>
+              <h3>«Всё работает идеально»</h3>
+              <p>У меня Zeekr X. Установили SIM-карту, YouTube, Яндекс, Музыку и Кинопоиск, отремонтировали заднюю фару и поменяли печку. Теперь всё работает идеально.</p>
+              <div class="review-author"><span class="avatar">G</span><div><b>Gulnara Toktabulatova</b><small>Zeekr X · мультимедиа и ремонт</small></div></div>
+            </article>
+            <article class="card review">
+              <span class="stars">★★★★★</span>
+              <h3>«Нашли решение быстро»</h3>
+              <p>Была проблема с камерой заднего вида, которую многие не могли решить. Ребята продиагностировали и быстро нашли решение.</p>
+              <div class="review-author"><span class="avatar">Б</span><div><b>Клиент 2ГИС</b><small>Камера заднего вида</small></div></div>
+            </article>
+          </div>
+          <div class="reviews-nav">
+            <button class="icon-btn" id="revPrev" aria-label="Предыдущий отзыв"><svg><use href="#i-left"/></svg></button>
+            <button class="icon-btn" id="revNext" aria-label="Следующий отзыв"><svg><use href="#i-arrow"/></svg></button>
+            <a class="btn btn-ghost btn-sm" href="https://2gis.kz/almaty/firm/70000001086911492/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Вопросы</span>
+          <h2>Перед <span class="grad-text">визитом</span></h2>
+        </div>
+        <div class="faq">
+          <div class="faq-item reveal open">
+            <button class="faq-q" aria-expanded="true">Нужно ли записываться заранее?<span class="faq-icon"></span></button>
+            <div class="faq-a"><div><p>Да, лучше записаться заранее через WhatsApp или по телефону. Так мы подготовим место и мастера к вашему приезду, и вам не придётся ждать.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">С какими марками вы работаете?<span class="faq-icon"></span></button>
+            <div class="faq-a"><div><p>С электромобилями и гибридами: Zeekr, Li Auto, BYD, Voyah, Volkswagen ID., Tesla, Geely, Changan и многими другими. Если сомневаетесь — напишите модель, ответим сразу.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">Сколько стоит ремонт?<span class="faq-icon"></span></button>
+            <div class="faq-a"><div><p>Стоимость зависит от модели и неисправности. Точную цену называем после диагностики и согласовываем с вами до начала работ.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">Можно ли проверить батарею перед покупкой электромобиля?<span class="faq-icon"></span></button>
+            <div class="faq-a"><div><p>Да. Диагностика высоковольтной батареи и электронных систем поможет понять реальное состояние автомобиля до покупки.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">Как можно оплатить?<span class="faq-icon"></span></button>
+            <div class="faq-a"><div><p>Картой, наличными, по QR-коду или переводом через банк.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">Где вы находитесь и есть ли парковка?<span class="faq-icon"></span></button>
+            <div class="faq-a"><div><p>Алматы, Турксибский район, ул. Хмельницкого, 38, 1 этаж. Рядом остановка «Гёте» (около 150 м) и парковки. Работаем ежедневно с 10:00 до 20:00.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTS / 2GIS ================= -->
+    <section class="section" id="contacts" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Контакты</span>
+          <h2>Приезжайте <span class="grad-text">к нам</span></h2>
+          <p>Мы в Турксибском районе Алматы. Постройте маршрут в 2ГИС — и мы ждём вас.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="card contact-card reveal">
+            <div class="contact-row"><span class="icon-box"><svg><use href="#i-pin"/></svg></span><div><small>Адрес</small><b>ул. Хмельницкого, 38, 1 этаж</b><span>Турксибский район, Алматы, 050054</span></div></div>
+            <div class="contact-row"><span class="icon-box"><svg><use href="#i-phone"/></svg></span><div><small>Телефон / WhatsApp</small><a class="big" href="tel:+77777730288">+7 777 773 02 88</a></div></div>
+            <div class="contact-row"><span class="icon-box"><svg><use href="#i-clock"/></svg></span><div><small>Режим работы</small><b>Ежедневно, 10:00–20:00</b><span>Без выходных</span></div></div>
+            <div class="contact-row"><span class="icon-box"><svg><use href="#i-card"/></svg></span><div><small>Оплата</small><b>Карта, наличные, QR, банк</b></div></div>
+            <div class="socials">
+              <a class="social" href="https://www.instagram.com/lecar_electrocar/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+              <a class="social" href="https://wa.me/77777730288" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+              <a class="social" href="https://t.me/lecar_electrocar" target="_blank" rel="noopener" aria-label="Telegram"><svg><use href="#i-tg"/></svg></a>
+              <a class="social" href="https://youtube.com/@Lecar_electrocar" target="_blank" rel="noopener" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+            </div>
+            <div class="contact-btns">
+              <a class="btn btn-primary" href="https://wa.me/77777730288?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener"><svg style="transform:none"><use href="#i-wa"/></svg> Записаться в WhatsApp</a>
+              <a class="btn btn-ghost" href="tel:+77777730288">Позвонить</a>
+            </div>
+          </div>
+
+          <div class="card map-card reveal" data-delay="2">
+            <div class="map-frame" id="mapFrame">
+              <iframe title="Lecar-electrocar на карте 2ГИС" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://widgets.2gis.com/widget?type=firmsonmap&amp;options=%7B%22pos%22%3A%7B%22lat%22%3A43.322011%2C%22lon%22%3A76.967658%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22almaty%22%7D%2C%22org%22%3A%2270000001086911492%22%7D"></iframe>
+            </div>
+            <div class="map-bar">
+              <span><span class="tag">2ГИС</span> Lecar_electrocar · ★ 4.7</span>
+              <div class="links">
+                <a class="btn btn-ghost btn-sm" href="https://2gis.kz/almaty/firm/70000001086911492" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+                <a class="btn btn-primary btn-sm" href="https://2gis.kz/almaty/directions/points/%7C76.967658%2C43.322011%3B70000001086911492" target="_blank" rel="noopener">Построить маршрут</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section>
+      <div class="container">
+        <div class="cta reveal">
+          <span class="kicker">Готовы помочь</span>
+          <h2>Электрокар ведёт себя странно? <span class="grad-text">Покажите его нам.</span></h2>
+          <p>Напишите модель авто и что беспокоит — подскажем, что делать, и подберём удобное время.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary magnetic" href="https://wa.me/77777730288?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener">Записаться на сервис <svg><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost magnetic" href="tel:+77777730288">+7 777 773 02 88</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#top" class="logo"><span class="logo-mark"><svg><use href="#i-bolt"/></svg></span><span>Lecar<small>electrocar</small></span></a>
+          <p>Лекарь электрокаров — ремонт, обслуживание и диагностика электромобилей и гибридов в Алматы.</p>
+        </div>
+        <div>
+          <h4>Услуги</h4>
+          <ul>
+            <li><a href="#services">Диагностика</a></li>
+            <li><a href="#services">Диагностика ВВБ</a></li>
+            <li><a href="#services">Плановое ТО</a></li>
+            <li><a href="#services">Прошивка и русификация</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Компания</h4>
+          <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#process">Как мы работаем</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#faq">Вопросы</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="tel:+77777730288">+7 777 773 02 88</a></li>
+            <li>ул. Хмельницкого, 38, Алматы</li>
+            <li>Ежедневно 10:00–20:00</li>
+            <li><a href="https://www.instagram.com/lecar_electrocar/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Lecar-electrocar. Все права защищены.</span>
+        <span>Алматы, Казахстан</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="fab" id="fab" href="https://wa.me/77777730288?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81." target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
